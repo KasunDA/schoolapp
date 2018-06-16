@@ -12,7 +12,7 @@
 	</style>
 
 	<center>
-		<img src="uploads/logo.png" style="max-height : 60px;"><br>
+		<img src="uploads/logo.png" style="max-height : 140px;"><br>
 		<h3 style="font-weight: 100;"><?php echo $system_name;?></h3>
 		<h3><?php echo get_phrase('activity_register');?></h3><br>
 		<u><?php echo $activity->name;?></u><br>

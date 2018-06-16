@@ -1,4 +1,4 @@
-<?php 
+<?php
 	$class_name		 	= 	$this->db->get_where('class' , array('class_id' => $class_id))->row()->name;
 	$exam_name  		= 	$this->db->get_where('exam' , array('exam_id' => $exam_id))->row()->name;
 	$system_name        =	$this->db->get_where('settings' , array('type'=>'system_name'))->row()->description;
@@ -12,23 +12,23 @@
 	</style>
 
 	<center>
-		<img src="uploads/logo.png" style="max-height : 60px;"><br>
+		<img src="uploads/logo.png" style="max-height : 140px;"><br>
 		<h3 style="font-weight: 100;"><?php echo $system_name;?></h3>
 		<?php echo get_phrase('tabulation_sheet');?><br>
 		<?php echo get_phrase('class') . ' ' . $class_name;?><br>
 		<?php echo $exam_name;?>
 
-		
+
 	</center>
 
-	
+
 	<table style="width:100%; border-collapse:collapse;border: 1px solid #ccc; margin-top: 10px;" border="1">
 		<thead>
 			<tr>
 			<td style="text-align: center;">
 				<?php echo get_phrase('students');?> <i class="entypo-down-thin"></i> | <?php echo get_phrase('subjects');?> <i class="entypo-right-thin"></i>
 			</td>
-			<?php 
+			<?php
 				$subjects = $this->db->get_where('subject' , array('class_id' => $class_id))->result_array();
 				foreach($subjects as $row):
 			?>
@@ -40,7 +40,7 @@
 		</thead>
 		<tbody>
 		<?php
-			
+
 			$students = $this->db->get_where('student' , array('class_id' => $class_id))->result_array();
 			foreach($students as $row):
 		?>
@@ -48,15 +48,15 @@
 				<td style="text-align: center;"><?php echo $row['name'];?></td>
 			<?php
 				$total_marks = 0;
-				$total_grade_point = 0;  
+				$total_grade_point = 0;
 				foreach($subjects as $row2):
 			?>
 				<td style="text-align: center;">
-					<?php 
+					<?php
 						$obtained_mark_query = 	$this->db->get_where('mark' , array(
-												'class_id' => $class_id , 
-													'exam_id' => $exam_id , 
-														'subject_id' => $row2['subject_id'] , 
+												'class_id' => $class_id ,
+													'exam_id' => $exam_id ,
+														'subject_id' => $row2['subject_id'] ,
 															'student_id' => $row['student_id']
 											));
 						if ( $obtained_mark_query->num_rows() > 0) {
@@ -68,14 +68,14 @@
 							}
 							$total_marks += $obtained_marks;
 						}
-						
+
 
 					?>
 				</td>
 			<?php endforeach;?>
 			<td style="text-align: center;"><?php echo $total_marks;?></td>
 			<td style="text-align: center;">
-				<?php 
+				<?php
 					$this->db->where('class_id' , $class_id);
 					$this->db->from('subject');
 					$number_of_subjects = $this->db->count_all_results();
@@ -107,7 +107,7 @@
         Popup($(elem).html());
     }
 
-    function Popup(data) 
+    function Popup(data)
     {
         var mywindow = window.open('', 'my div', 'height=400,width=600');
         mywindow.document.write('<html><head><title></title>');

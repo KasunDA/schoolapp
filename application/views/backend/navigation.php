@@ -4,7 +4,7 @@
         <!-- logo -->
         <div class="logo" style="">
             <a href="<?php echo base_url(); ?>">
-                <img src="uploads/logo.png"  style="max-height:60px;"/>
+                <img src="uploads/logo.png"  style="max-height:140px;"/>
             </a>
         </div>
 
@@ -32,7 +32,7 @@
 
         <!-- DASHBOARD -->
         <li class="<?php if ($page_name == 'dashboard') echo 'active'; ?> ">
-            <a href="<?php echo base_url(); ?>index.php?admin/dashboard">
+            <a href="<?php echo base_url(); ?>index.php?dashboard/dashboard">
                 <i class="entypo-gauge"></i>
                 <span><?php echo get_phrase('dashboard'); ?></span>
             </a>
