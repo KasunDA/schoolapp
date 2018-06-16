@@ -1,0 +1,13 @@
+Database Changes
+
+- Added a user table
+- Added user_id field in admin, student, teacher and parent tables
+- Deleted the password column in the blank_excel_file.xlsx  
+- Removed password and authentication_key fields in admin, student,teacher and parent tables
+
+
+Enhancement after Conversion to Version 2.0
+
+- Give an option of creating a sytem user when creating a profile for a teacher, parent and student
+- Check all delete control in the system and create an authentication control
+- Mimic attendance in the parents activity attendance module
