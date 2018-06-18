@@ -26,7 +26,7 @@
 </head>
 <body class="page-body <?php if ($skin_colour != '') echo 'skin-' . $skin_colour;?>" >
 	<div class="page-container <?php if ($text_align == 'right-to-left') echo 'right-sidebar';?>" >
-		<?php include '/navigation.php';?>
+		<?php include 'navigation.php';?>
 		<div class="main-content">
 
 			<?php include 'header.php';?>

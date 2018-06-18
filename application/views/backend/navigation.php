@@ -236,14 +236,15 @@
 
         <!-- ACCOUNTING -->
         <li class="<?php
-        if ($page_name == 'income' ||
-                $page_name == 'expense' ||
-                    $page_name == 'expense_category' ||
-                        $page_name == 'student_payment'||
-						$page_name == 'budget'||
-						$page_name == 'cash_book'||
-						$page_name == 'financial_report')
-                            echo 'opened active';
+        if (  $page_name = "fees_structure" ||
+              $page_name == 'income' ||
+              $page_name == 'expense' ||
+              $page_name == 'expense_category' ||
+              $page_name == 'student_payment'||
+						  $page_name == 'budget'||
+						  $page_name == 'cash_book'||
+						  $page_name == 'financial_report')
+              echo 'opened active';
         ?> ">
             <a href="#">
                 <i class="entypo-suitcase"></i>
@@ -251,7 +252,7 @@
             </a>
             <ul>
                 <li class="<?php if ($page_name == 'fees_structure') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?admin/fees_structure">
+                    <a href="<?php echo base_url(); ?>index.php?finance/fees_structure">
                         <span><i class="entypo-dot"></i> <?php echo get_phrase('fees_structure'); ?></span>
                     </a>
                 </li>

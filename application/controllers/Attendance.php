@@ -71,7 +71,7 @@ class Attendance extends CI_Controller
           $page_data['page_name']  =	'manage_attendance';
           $page_data['page_view'] = 'attendance';
           $page_data['page_title'] =	get_phrase('manage_daily_attendance');
-  		      $this->load->view('backend/index', $page_data);
+  		    $this->load->view('backend/index', $page_data);
   	}
   	function attendance_selector()
   	{
